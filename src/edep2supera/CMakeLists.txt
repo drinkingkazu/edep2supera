@@ -25,14 +25,16 @@ target_link_libraries(edep2supera
 
 # Install
 install(TARGETS edep2supera
-    LIBRARY DESTINATION ${CMAKE_PACKAGE_DIR}/lib
-    ARCHIVE DESTINATION ${CMAKE_PACKAGE_DIR}/lib
-    RUNTIME DESTINATION ${CMAKE_PACKAGE_DIR}/bin
-    INCLUDES DESTINATION ${CMAKE_PACKAGE_DIR}/include
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+    INCLUDES DESTINATION include
     )
 
 install (FILES ${HEADERS}
-    DESTINATION ${CMAKE_PACKAGE_DIR}/include/edep2supera/${name})
+    DESTINATION include/${name})
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libedep2supera.rootmap DESTINATION ${CMAKE_PACKAGE_DIR}/lib)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libedep2supera_rdict.pcm DESTINATION ${CMAKE_PACKAGE_DIR}/lib)
+message("AAAA CMAKE_PACKAGE_DIR ${CMAKE_PACKAGE_DIR}")
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libedep2supera.rootmap DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libedep2supera_rdict.pcm DESTINATION lib)
